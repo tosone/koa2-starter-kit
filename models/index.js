@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import glob from 'glob';
 import path from 'path';
 
+import config from '../config';
+
 glob('models/*.js', (err, files) => {
     files.forEach(file => {
         if (file.indexOf('index') === -1) {
@@ -11,7 +13,7 @@ glob('models/*.js', (err, files) => {
     });
 });
 
-mongoose.connect('mongodb://sone:8541539655@115.28.87.181:27017/CodeShare', err => {
+mongoose.connect(config.MongoDBURL, err => {
     if (err) {
         console.log(err);
     } else {
