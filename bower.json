@@ -1,0 +1,36 @@
+{
+  "name": "koa2-starter-kit",
+  "description": "Web app boilerplate using Koa, React, Passport, Mongoose, Webpack, Mocha, Babel",
+  "main": "index.js",
+  "authors": [
+    "Tosone"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Koa",
+    "React",
+    "Passport",
+    "Mongoose",
+    "Webpack",
+    "Mocha",
+    "Babel"
+  ],
+  "homepage": "https://github.com/tosone/koa2-starter-kit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.13.0",
+    "jquery": "^3.0.0",
+    "semantic": "semantic-ui#^2.1.8",
+    "react": "^15.1.0",
+    "babel": "*",
+    "lodash": "^4.13.1",
+    "wow": "^1.1.2",
+    "flux": "^2.1.1"
+  }
+}
