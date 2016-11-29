@@ -14,20 +14,20 @@ const app = new Koa();
 const router = require('./routers');
 
 app.use(convert(staticCache(path.join(__dirname, 'public'), {
-    maxAge: 24 * 60 * 60 * 30,
-    gzip: true
+  maxAge: 24 * 60 * 60 * 30,
+  gzip: true
 })));
 app.use(require('./logger'));
 app.use(router.routes());
 app.use(router.allowedMethods());
 
 http.createServer(app.callback()).listen(config.httpPort, () => {
-    console.log(`Server running at http://127.0.0.1:${config.httpPort}.`);
+  console.log(`Server running at http://127.0.0.1:${config.httpPort}.`);
 });
 
 https.createServer({
-    key: fs.readFileSync('pem/privatekey.pem'),
-    cert: fs.readFileSync('pem/certificate.pem')
+  key: fs.readFileSync('pem/privatekey.pem'),
+  cert: fs.readFileSync('pem/certificate.pem')
 }, app.callback()).listen(config.httpsPort, () => {
-    console.log(`Server running at http://127.0.0.1:${config.httpsPort}.`);
+  console.log(`Server running at https://127.0.0.1:${config.httpsPort}.`);
 });
